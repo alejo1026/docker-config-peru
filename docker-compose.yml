@@ -1,0 +1,63 @@
+services:
+  nginx-proxy:
+    image: nginxproxy/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - certs:/etc/nginx/certs
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    restart: always
+
+  acme-companion:
+    image: nginxproxy/acme-companion
+    container_name: nginx-proxy-acme
+    environment:
+      - DEFAULT_EMAIL=alejcartoon1333@gmail.com
+    volumes_from:
+      - nginx-proxy
+    volumes:
+      - acme:/etc/acme.sh
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: always
+
+  project-forum:
+    image: project-forum
+    build:
+      context: ../project-forum
+    restart: always
+    expose:
+      - '3000'
+    environment:
+      - VIRTUAL_HOST=expresfrm.com
+      - LETSENCRYPT_HOST=expresfrm.com
+      - VIRTUAL_PORT=3000  # Nuxt server
+      - SOCKET_URL=https://expresfrm.com:3001
+      - MP_ACCESS_TOKEN=APP_USR-4039038878469211-050713-bb150db840d6fc80cd7b8a457630aacd-2018575679
+      - MP_PUBLIC_KEY=APP_USR-bc717edb-9ce3-42e9-8f97-0752e736be60
+      - CLIENT_URL=https://expresfrm.com
+      - MP_NOTIFICATION_URL=https://expresfrm.com/api/webhook/mercadopago
+
+  server-sockets-forum:
+    image: server-sockets-forum
+    build:
+      context: ../server-sockets-forum
+    restart: always
+    expose:
+      - '3001'
+    environment:
+      - VIRTUAL_HOST=server-sockets-forum.expresfrm.com
+      - LETSENCRYPT_HOST=server-sockets-forum.expresfrm.com
+      - SOCKET_PORT=3001
+      - SOCKET_HOST=0.0.0.0
+      - CLIENT_URL=https://expresfrm.com
+      
+  volumes:
+  conf:
+  vhost:
+  html:
+  certs:
+  acme:
