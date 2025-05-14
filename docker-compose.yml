@@ -35,10 +35,9 @@ services:
       - VIRTUAL_HOST=expresfrm.com
       - LETSENCRYPT_HOST=expresfrm.com
       - VIRTUAL_PORT=3000  # Nuxt server
-      - SOCKET_URL=https://expresfrm.com:3001
+      - SOCKET_URL=https://server-sockets-forum.expresfrm.com
       - MP_ACCESS_TOKEN=APP_USR-4039038878469211-050713-bb150db840d6fc80cd7b8a457630aacd-2018575679
       - MP_PUBLIC_KEY=APP_USR-bc717edb-9ce3-42e9-8f97-0752e736be60
-      - CLIENT_URL=https://expresfrm.com
       - MP_NOTIFICATION_URL=https://expresfrm.com/api/webhook/mercadopago
 
   server-sockets-forum:
