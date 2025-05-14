@@ -54,9 +54,9 @@ services:
       - SOCKET_HOST=0.0.0.0
       - CLIENT_URL=https://expresfrm.com
       
-  volumes:
-  conf:
-  vhost:
-  html:
-  certs:
-  acme:
+volumes:
+conf:
+vhost:
+html:
+certs:
+acme:
