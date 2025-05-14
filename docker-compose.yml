@@ -55,8 +55,8 @@ services:
       - CLIENT_URL=https://expresfrm.com
       
 volumes:
-conf:
-vhost:
-html:
-certs:
-acme:
+  conf:
+  vhost:
+  html:
+  certs:
+  acme:
