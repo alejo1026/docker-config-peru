@@ -32,13 +32,13 @@ services:
     expose:
       - '3000'
     environment:
-      - VIRTUAL_HOST=expresfrm.com
-      - LETSENCRYPT_HOST=expresfrm.com
+      - VIRTUAL_HOST=expresfrm.pro
+      - LETSENCRYPT_HOST=expresfrm.pro
       - VIRTUAL_PORT=3000  # Nuxt server
-      - SOCKET_URL=https://server-sockets-forum.expresfrm.com
+      - SOCKET_URL=https://server-sockets-forum.expresfrm.pro
       - MP_ACCESS_TOKEN=APP_USR-4039038878469211-050713-bb150db840d6fc80cd7b8a457630aacd-2018575679
       - MP_PUBLIC_KEY=APP_USR-bc717edb-9ce3-42e9-8f97-0752e736be60
-      - MP_NOTIFICATION_URL=https://expresfrm.com/api/webhook/mercadopago
+      - MP_NOTIFICATION_URL=https://expresfrm.pro/api/webhook/mercadopago
 
   server-sockets-forum:
     image: server-sockets-forum
@@ -48,11 +48,11 @@ services:
     expose:
       - '3001'
     environment:
-      - VIRTUAL_HOST=server-sockets-forum.expresfrm.com
-      - LETSENCRYPT_HOST=server-sockets-forum.expresfrm.com
+      - VIRTUAL_HOST=server-sockets-forum.expresfrm.pro
+      - LETSENCRYPT_HOST=server-sockets-forum.expresfrm.pro
       - SOCKET_PORT=3001
       - SOCKET_HOST=0.0.0.0
-      - CLIENT_URL=https://expresfrm.com
+      - CLIENT_URL=https://expresfrm.pro
       
 volumes:
   conf:
