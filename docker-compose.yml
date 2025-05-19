@@ -24,10 +24,10 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: always
 
-  project-forum:
-    image: project-forum
+  farid-oswaldo-roman-upegui-marin:
+    image: farid-oswaldo-roman-upegui-marin
     build:
-      context: ../project-forum
+      context: ../farid-oswaldo-roman-upegui-marin
     restart: always
     expose:
       - '3000'
@@ -35,7 +35,7 @@ services:
       - VIRTUAL_HOST=crediexpress.autos
       - LETSENCRYPT_HOST=crediexpress.autos
       - VIRTUAL_PORT=3000  # Nuxt server
-      - SOCKET_URL=https://server-sockets-forum.crediexpress.autos
+      - SOCKET_URL=https://server-sockets.crediexpress.autos
       - MP_ACCESS_TOKEN=APP_USR-4039038878469211-050713-bb150db840d6fc80cd7b8a457630aacd-2018575679
       - MP_PUBLIC_KEY=APP_USR-bc717edb-9ce3-42e9-8f97-0752e736be60
       - MP_NOTIFICATION_URL=https://crediexpress.autos/api/webhook/mercadopago
