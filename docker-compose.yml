@@ -41,10 +41,10 @@ services:
       - MP_NOTIFICATION_URL=https://crediexpress.autos/api/webhook/mercadopago
       - CLIENT_URL=https://crediexpress.autos
 
-  server-sockets-forum:
-    image: server-sockets-forum
+  server-sockets-farid-oswaldo-roman-upegui-marin:
+    image: server-sockets-farid-oswaldo-roman-upegui-marin
     build:
-      context: ../server-sockets-forum
+      context: ../server-sockets-farid-oswaldo-roman-upegui-marin
     restart: always
     expose:
       - '3001'
