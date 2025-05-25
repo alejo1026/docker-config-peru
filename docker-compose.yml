@@ -40,6 +40,9 @@ services:
       - MP_PUBLIC_KEY=APP_USR-bc717edb-9ce3-42e9-8f97-0752e736be60
       - MP_NOTIFICATION_URL=https://crediexpress.autos/api/webhook/mercadopago
       - CLIENT_URL=https://crediexpress.autos
+      - FLOW_API_KEY=4D5EF645-AF4D-4864-A1E5-6A0868LE529B
+      - FLOW_SECRET_KEY=cefdff9b0f47f996b2eed8c143acf37bb5565dc6
+      - API_BASE_URL=https://crediexpress.autos
 
   server-sockets-farid-oswaldo-roman-upegui-marin:
     image: server-sockets-farid-oswaldo-roman-upegui-marin
