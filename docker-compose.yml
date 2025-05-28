@@ -32,17 +32,17 @@ services:
     expose:
       - '3000'
     environment:
-      - VIRTUAL_HOST=crediexpress.autos
-      - LETSENCRYPT_HOST=crediexpress.autos
+      - VIRTUAL_HOST=exprescreditsfrm.online
+      - LETSENCRYPT_HOST=exprescreditsfrm.online
       - VIRTUAL_PORT=3000  # Nuxt server
-      - SOCKET_URL=https://server-sockets.crediexpress.autos
+      - SOCKET_URL=https://server-sockets.exprescreditsfrm.online
       - MP_ACCESS_TOKEN=APP_USR-4039038878469211-050713-bb150db840d6fc80cd7b8a457630aacd-2018575679
       - MP_PUBLIC_KEY=APP_USR-bc717edb-9ce3-42e9-8f97-0752e736be60
-      - MP_NOTIFICATION_URL=https://crediexpress.autos/api/webhook/mercadopago
-      - CLIENT_URL=https://crediexpress.autos
+      - MP_NOTIFICATION_URL=https://exprescreditsfrm.online/api/webhook/mercadopago
+      - CLIENT_URL=https://exprescreditsfrm.online
       - FLOW_API_KEY=4D5EF645-AF4D-4864-A1E5-6A0868LE529B
       - FLOW_SECRET_KEY=cefdff9b0f47f996b2eed8c143acf37bb5565dc6
-      - API_BASE_URL=https://crediexpress.autos
+      - API_BASE_URL=https://exprescreditsfrm.online
 
   server-sockets-farid-oswaldo-roman-upegui-marin:
     image: server-sockets-farid-oswaldo-roman-upegui-marin
@@ -52,11 +52,11 @@ services:
     expose:
       - '3001'
     environment:
-      - VIRTUAL_HOST=server-sockets.crediexpress.autos
-      - LETSENCRYPT_HOST=server-sockets.crediexpress.autos
+      - VIRTUAL_HOST=server-sockets.exprescreditsfrm.online
+      - LETSENCRYPT_HOST=server-sockets.exprescreditsfrm.online
       - SOCKET_PORT=3001
       - SOCKET_HOST=0.0.0.0
-      - CLIENT_URL=https://crediexpress.autos
+      - CLIENT_URL=https://exprescreditsfrm.online
       
 volumes:
   conf:
