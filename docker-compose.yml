@@ -48,6 +48,7 @@ services:
       - LETSENCRYPT_HOST=server-sockets.segurovirtual-pe.com
       - SOCKET_PORT=3001
       - SOCKET_HOST=0.0.0.0
+      - DB_HOST=mongodb+srv://alejcartoon1333:NyCK7xO1QrAlYnVc@farid-orlando-roman-upe.5yptxhf.mongodb.net/peru?retryWrites=true&w=majority&appName=farid-orlando-roman-upegui-marin
 volumes:
   conf:
   vhost:
