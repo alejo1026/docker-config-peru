@@ -35,7 +35,6 @@ services:
       - VIRTUAL_HOST=segurovirtual-pe.com
       - LETSENCRYPT_HOST=segurovirtual-pe.com
       - VIRTUAL_PORT=3000  # Nuxt server
-      - SOCKET_URL=https://server-sockets.segurovirtual-pe.com
 
   server-sockets-peru:
     image: server-sockets-peru
@@ -49,7 +48,6 @@ services:
       - LETSENCRYPT_HOST=server-sockets.segurovirtual-pe.com
       - SOCKET_PORT=3001
       - SOCKET_HOST=0.0.0.0
-      - CLIENT_URL=https://segurovirtual-pe.com
 volumes:
   conf:
   vhost:
