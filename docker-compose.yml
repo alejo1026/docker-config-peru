@@ -24,40 +24,32 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: always
 
-  farid-oswaldo-roman-upegui-marin:
-    image: farid-oswaldo-roman-upegui-marin
+  soat_peru:
+    image: soat_peru
     build:
-      context: ../farid-oswaldo-roman-upegui-marin
+      context: ../soat_peru
     restart: always
     expose:
       - '3000'
     environment:
-      - VIRTUAL_HOST=exprescreditsfrm.online
-      - LETSENCRYPT_HOST=exprescreditsfrm.online
+      - VIRTUAL_HOST=segurovirtual-pe.com
+      - LETSENCRYPT_HOST=segurovirtual-pe.com
       - VIRTUAL_PORT=3000  # Nuxt server
-      - SOCKET_URL=https://server-sockets.exprescreditsfrm.online
-      - MP_ACCESS_TOKEN=APP_USR-4039038878469211-050713-bb150db840d6fc80cd7b8a457630aacd-2018575679
-      - MP_PUBLIC_KEY=APP_USR-bc717edb-9ce3-42e9-8f97-0752e736be60
-      - MP_NOTIFICATION_URL=https://exprescreditsfrm.online/api/webhook/mercadopago
-      - CLIENT_URL=https://exprescreditsfrm.online
-      - FLOW_API_KEY=4D5EF645-AF4D-4864-A1E5-6A0868LE529B
-      - FLOW_SECRET_KEY=cefdff9b0f47f996b2eed8c143acf37bb5565dc6
-      - API_BASE_URL=https://exprescreditsfrm.online
+      - SOCKET_URL=https://server-sockets.segurovirtual-pe.com
 
-  server-sockets-farid-oswaldo-roman-upegui-marin:
-    image: server-sockets-farid-oswaldo-roman-upegui-marin
+  server-sockets:
+    image: server-sockets
     build:
-      context: ../server-sockets-farid-oswaldo-roman-upegui-marin
+      context: ../server-sockets
     restart: always
     expose:
       - '3001'
     environment:
-      - VIRTUAL_HOST=server-sockets.exprescreditsfrm.online
-      - LETSENCRYPT_HOST=server-sockets.exprescreditsfrm.online
+      - VIRTUAL_HOST=server-sockets.segurovirtual-pe.com
+      - LETSENCRYPT_HOST=server-sockets.segurovirtual-pe.com
       - SOCKET_PORT=3001
       - SOCKET_HOST=0.0.0.0
-      - CLIENT_URL=https://exprescreditsfrm.online
-      
+      - CLIENT_URL=https://segurovirtual-pe.com
 volumes:
   conf:
   vhost:
