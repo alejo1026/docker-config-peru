@@ -24,10 +24,10 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: always
 
-  soat_peru:
-    image: soat_peru
+  soat-peru:
+    image: soat-peru
     build:
-      context: ../soat_peru
+      context: ../soat-peru
     restart: always
     expose:
       - '3000'
@@ -37,10 +37,10 @@ services:
       - VIRTUAL_PORT=3000  # Nuxt server
       - SOCKET_URL=https://server-sockets.segurovirtual-pe.com
 
-  server-sockets:
-    image: server-sockets
+  server-sockets-peru:
+    image: server-sockets-peru
     build:
-      context: ../server-sockets
+      context: ../server-sockets-peru
     restart: always
     expose:
       - '3001'
